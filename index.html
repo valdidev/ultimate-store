@@ -2,15 +2,9 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Store - Panel Administrativo</title>
-    <link
-      rel="stylesheet"
-      href="./style.css"
-    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
@@ -25,10 +19,7 @@
       <div class="dashboard">
         <div class="card">
           <h2>Ventas por Usuario</h2>
-          <div
-            id="loading-sales"
-            class="spinner"
-          ></div>
+          <div id="loading-sales" class="spinner"></div>
           <table id="sales-table">
             <thead>
               <tr>
@@ -42,35 +33,20 @@
 
         <div class="card">
           <h2>Productos con Bajo Stock</h2>
-          <div
-            id="loading-stock"
-            class="spinner"
-          ></div>
-          <div
-            class="product-list"
-            id="stock-list"
-          ></div>
+          <div id="loading-stock" class="spinner"></div>
+          <div class="product-list" id="stock-list"></div>
         </div>
 
         <div class="card">
           <h2>Lista de Productos</h2>
-          <div
-            id="loading-products"
-            class="spinner"
-          ></div>
-          <div
-            class="product-list"
-            id="products-list"
-          ></div>
+          <div id="loading-products" class="spinner"></div>
+          <div class="product-list" id="products-list"></div>
         </div>
       </div>
 
       <div class="card">
         <h2>Detalles de Pedidos</h2>
-        <div
-          id="loading-orders"
-          class="spinner"
-        ></div>
+        <div id="loading-orders" class="spinner"></div>
         <table id="orders-table">
           <thead>
             <tr>
@@ -93,18 +69,11 @@
           <form id="update-status-form">
             <div class="form-group">
               <label for="order-id">ID de Pedido:</label>
-              <input
-                type="number"
-                id="order-id"
-                required
-              />
+              <input type="number" id="order-id" required />
             </div>
             <div class="form-group">
               <label for="new-status">Nuevo Estado:</label>
-              <select
-                id="new-status"
-                required
-              >
+              <select id="new-status" required>
                 <option value="">Seleccionar...</option>
                 <option value="pendiente">Pendiente</option>
                 <option value="procesando">Procesando</option>
@@ -122,28 +91,15 @@
           <form id="add-product-form">
             <div class="form-group">
               <label for="add-order-id">ID de Pedido:</label>
-              <input
-                type="number"
-                id="add-order-id"
-                required
-              />
+              <input type="number" id="add-order-id" required />
             </div>
             <div class="form-group">
               <label for="product-id">ID de Producto:</label>
-              <input
-                type="number"
-                id="product-id"
-                required
-              />
+              <input type="number" id="product-id" required />
             </div>
             <div class="form-group">
               <label for="quantity">Cantidad:</label>
-              <input
-                type="number"
-                id="quantity"
-                required
-                min="1"
-              />
+              <input type="number" id="quantity" required min="1" />
             </div>
             <button type="submit">Añadir Producto</button>
           </form>
