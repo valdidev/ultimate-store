@@ -2,16 +2,21 @@ from flask import Flask, jsonify, request
 import mysql.connector
 from mysql.connector import Error
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 # Configuración de la base de datos
 db_config = {
-    'user': 'root',
-    'password': 'MysqlRules1!',
-    'host': 'localhost',
-    'database': 'ultimate-store',
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'database': os.getenv('DB_NAME'),
+    'port': int(os.getenv('DB_PORT', 3306)),
     'raise_on_warnings': True
 }
 
