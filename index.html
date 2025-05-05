@@ -1,112 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ultimate Store - Panel Administrativo</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Ultimate Store - Panel Administrativo</h1>
-      </div>
-    </header>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Store - Panel Administrativo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header>
     <div class="container">
-      <div id="message-container"></div>
+      <h1>Ultimate Store - Panel Administrativo</h1>
+    </div>
+  </header>
 
-      <div class="dashboard">
-        <div class="card">
-          <h2>Ventas por Usuario</h2>
-          <div id="loading-sales" class="spinner"></div>
-          <table id="sales-table">
-            <thead>
-              <tr>
-                <th>Usuario</th>
-                <th>Total Ventas</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+  <div class="container">
+    <div id="message-container"></div>
 
-        <div class="card">
-          <h2>Productos con Bajo Stock</h2>
-          <div id="loading-stock" class="spinner"></div>
-          <div class="product-list" id="stock-list"></div>
-        </div>
-
-        <div class="card">
-          <h2>Lista de Productos</h2>
-          <div id="loading-products" class="spinner"></div>
-          <div class="product-list" id="products-list"></div>
-        </div>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="sales-stock">Ventas y Stock</button>
+        <button class="tab-button" data-tab="products">Productos</button>
+        <button class="tab-button" data-tab="orders">Pedidos</button>
       </div>
 
-      <div class="card">
-        <h2>Detalles de Pedidos</h2>
-        <div id="loading-orders" class="spinner"></div>
-        <table id="orders-table">
-          <thead>
-            <tr>
-              <th>Pedido</th>
-              <th>Cliente</th>
-              <th>Fecha</th>
-              <th>Estado</th>
-              <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <div class="tab-content">
+        <div id="sales-stock" class="tab-pane active">
+          <div class="dashboard">
+            <div class="card">
+              <h2>Ventas por Usuario</h2>
+              <div id="loading-sales" class="spinner"></div>
+              <table id="sales-table">
+                <thead>
+                  <tr>
+                    <th>Usuario</th>
+                    <th>Total Ventas</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
 
-      <div class="dashboard">
-        <div class="card">
-          <h2>Actualizar Estado de Pedido</h2>
-          <form id="update-status-form">
-            <div class="form-group">
-              <label for="order-id">ID de Pedido:</label>
-              <input type="number" id="order-id" required />
+            <div class="card">
+              <h2>Productos con Bajo Stock</h2>
+              <div id="loading-stock" class="spinner"></div>
+              <div class="product-list" id="stock-list"></div>
             </div>
-            <div class="form-group">
-              <label for="new-status">Nuevo Estado:</label>
-              <select id="new-status" required>
-                <option value="">Seleccionar...</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="procesando">Procesando</option>
-                <option value="enviado">Enviado</option>
-                <option value="entregado">Entregado</option>
-                <option value="cancelado">Cancelado</option>
-              </select>
-            </div>
-            <button type="submit">Actualizar Estado</button>
-          </form>
+          </div>
         </div>
 
-        <div class="card">
-          <h2>Añadir Producto a Pedido</h2>
-          <form id="add-product-form">
-            <div class="form-group">
-              <label for="add-order-id">ID de Pedido:</label>
-              <input type="number" id="add-order-id" required />
+        <div id="products" class="tab-pane">
+          <div class="card">
+            <h2>Lista de Productos</h2>
+            <div id="loading-products" class="spinner"></div>
+            <div class="product-list" id="products-list"></div>
+          </div>
+        </div>
+
+        <div id="orders" class="tab-pane">
+          <div class="card">
+            <h2>Detalles de Pedidos</h2>
+            <div id="loading-orders" class="spinner"></div>
+            <table id="orders-table">
+              <thead>
+                <tr>
+                  <th>Pedido</th>
+                  <th>Cliente</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="dashboard">
+            <div class="card">
+              <h2>Actualizar Estado de Pedido</h2>
+              <form id="update-status-form">
+                <div class="form-group">
+                  <label for="order-id">ID de Pedido:</label>
+                  <input type="number" id="order-id" required />
+                </div>
+                <div class="form-group">
+                  <label for="new-status">Nuevo Estado:</label>
+                  <select id="new-status" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="procesando">Procesando</option>
+                    <option value="enviado">Enviado</option>
+                    <option value="entregado">Entregado</option>
+                    <option value="cancelado">Cancelado</option>
+                  </select>
+                </div>
+                <button type="submit">Actualizar Estado</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="product-id">ID de Producto:</label>
-              <input type="number" id="product-id" required />
+
+            <div class="card">
+              <h2>Añadir Producto a Pedido</h2>
+              <form id="add-product-form">
+                <div class="form-group">
+                  <label for="add-order-id">ID de Pedido:</label>
+                  <input type="number" id="add-order-id" required />
+                </div>
+                <div class="form-group">
+                  <label for="product-id">ID de Producto:</label>
+                  <input type="number" id="product-id" required />
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Cantidad:</label>
+                  <input type="number" id="quantity" required min="1" />
+                </div>
+                <button type="submit">Añadir Producto</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="quantity">Cantidad:</label>
-              <input type="number" id="quantity" required min="1" />
-            </div>
-            <button type="submit">Añadir Producto</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./main.js"></script>
-  </body>
+  <script src="./main.js"></script>
+  <script>
+    document.querySelectorAll(".tab-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const tabId = button.getAttribute("data-tab");
+
+        document.querySelectorAll(".tab-button").forEach((btn) => btn.classList.remove("active"));
+        document.querySelectorAll(".tab-pane").forEach((pane) => pane.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(tabId).classList.add("active");
+      });
+    });
+  </script>
+</body>
+
 </html>
