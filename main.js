@@ -1,5 +1,5 @@
 // URL base de tu API Flask
-const API_BASE_URL = "https://tech-store-api.hectorgv00.online/api";
+const API_BASE_URL = "https://ultimate-store-api.valdidev.com/api";
 
 // Utility class for common functions
 class Utils {

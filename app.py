@@ -11,7 +11,7 @@ db_config = {
     'user': 'root',
     'password': 'MysqlRules1!',
     'host': 'localhost',
-    'database': 'tech-store',
+    'database': 'ultimate-store',
     'raise_on_warnings': True
 }
 

@@ -1,4 +1,4 @@
-# Tech Store - Panel Administrativo
+# Ultimate Store - Panel Administrativo
 
 Este proyecto es un panel administrativo simple para una tienda de tecnología ficticia. Permite visualizar información clave como ventas por usuario, productos con bajo stock, detalles de pedidos y la lista completa de productos. También ofrece funcionalidades para actualizar el estado de los pedidos y añadir productos a pedidos existentes.
 
@@ -20,7 +20,7 @@ Este proyecto es un panel administrativo simple para una tienda de tecnología f
 ### Base de Datos
 
 1.  Asegúrate de que tu servidor MySQL esté en funcionamiento.
-2.  Crea una base de datos llamada `tech-store`.
+2.  Crea una base de datos llamada `ultimate-store`.
 3.  Importa el esquema de la base de datos (necesitarás crear las tablas `users`, `products`, `orders`, `order_products` y las vistas `sales_by_user`, `low_stock_products`, `order_details`, así como los procedimientos almacenados `UpdateOrderStatus` y `AddProductToOrder`).
 4.  Actualiza las credenciales de la base de datos en `db_config` dentro de [`app.py`](app.py).
 
@@ -45,7 +45,7 @@ Este proyecto es un panel administrativo simple para una tienda de tecnología f
 ### Frontend
 
 1.  Abre el archivo [`index.html`](index.html) en tu navegador web.
-2.  Asegúrate de que la constante `API_BASE_URL` en [`main.js`](main.js) apunte a la URL correcta de tu backend (por defecto debería funcionar si el backend corre en `http://localhost:5000`, pero está configurado para `https://tech-store-api.hectorgv00.online/api`).
+2.  Asegúrate de que la constante `API_BASE_URL` en [`main.js`](main.js) apunte a la URL correcta de tu backend (por defecto debería funcionar si el backend corre en `http://localhost:5000`, pero está configurado para `https://ultimate-store-api.valdidev.com/api`).
 
 ## Funcionalidades
 
